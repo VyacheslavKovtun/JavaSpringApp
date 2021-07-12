@@ -38,4 +38,10 @@ public class PhotosController {
         photosRepository.save(photo);
         return "redirect:/";
     }
+
+    @PostMapping("")
+    public String delete(long id) {
+        photosRepository.deleteById(id);
+        return "redirect:/photos";
+    }
 }
